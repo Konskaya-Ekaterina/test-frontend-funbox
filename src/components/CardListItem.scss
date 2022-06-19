@@ -1,0 +1,202 @@
+@import "../assets/styles/variables.scss";
+
+.card {
+  width: 320px;
+  position: relative;
+}
+
+.card__box {
+  width: 322px;
+  height: 483px;
+  position: relative;
+  color: $card-text-gray;
+  text-align: left;
+  background-color: $color-blue-main;
+  border-radius: 12px;
+  -webkit-clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px);
+  -moz-clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px);
+  -ms-clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px);
+  clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px);
+  cursor: pointer;
+
+  &:not(.card__box_selected):not(.card__box_selected_hover):not(.card__box_disabled):hover,
+  &:not(.card__box_selected):not(.card__box_selected_hover):not(.card__box_disabled):hover .card__weight {
+    background-color: $color-blue-main-hover;
+  }
+
+  &_selected {
+    background-color: $color-pink-main;
+
+    &_hover {
+      background-color: $color-pink-main-hover;
+    }
+  }
+
+  &_disabled {
+    background-color: $color-gray-main;
+    cursor: default;
+    color: $color-gray-main;
+
+    &:hover, {
+      background-color: $color-gray-main;
+    }
+
+    &:hover .card__weight_disabled {
+      background-color: $card-text-gray;
+    }
+
+    &:after {
+      content: '';
+      width: 314px;
+      height: 475px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      opacity: 0.5;
+      -webkit-clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
+      -moz-clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
+      -ms-clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
+      clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
+    }
+
+    .card__title, .card__taste {
+      color: $color-gray-main;
+    }
+  }
+
+  &:before {
+    content: '';
+    width: 314px;
+    height: 475px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background-color: $card-background;
+    background-image: url("../assets/images/cat.png");
+    background-repeat: no-repeat;
+    background-position-x: -3px;
+    background-position-y: 206px;
+    border-radius: 8px;
+    -webkit-clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
+    -moz-clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
+    -ms-clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
+    clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
+  }
+}
+
+.card__content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 22px 58px 21px 51px;
+}
+
+.card__header {
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+
+  .header__text_hover {
+    color: $color-pink-main-hover
+  }
+}
+
+.card__title {
+  position: relative;
+  left: -3px;
+  color: $card-text-black;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.card__taste {
+  margin-bottom: 14px;
+  color: $card-text-black;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.card__portion, .card__present, .card__customer {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.card__weight {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: $white-text-main;
+  background-color: $color-blue-main;
+  border-radius: 50%;
+
+  &_selected {
+    background-color: $color-pink-main;
+
+    &_hover {
+      background-color: $color-pink-main-hover;
+    }
+  }
+
+  &_disabled {
+    background-color: $card-text-gray;
+  }
+}
+
+.card__num {
+  padding-top: 20px;
+  font-size: 42px;
+  line-height: 22px;
+}
+
+.card__measure {
+  padding-top: 8px;
+  font-size: 21px;
+  line-height: 22px;
+}
+
+.card__footer {
+  width: 100%;
+  position: absolute;
+  bottom: -30px;
+  color: $white-text-main;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+
+  .footer__text {
+    > strong {
+      color: $color-blue-main;
+      border-bottom: 1px dashed $color-blue-main;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-blue-main-hover;
+        border-bottom: 1px dashed $color-blue-main-hover;
+      }
+    }
+
+    > b {
+      color: $color-blue-main;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-blue-main-hover;
+      }
+    }
+
+    &_disabled {
+      color: $yellow-description-disabled
+    }
+  }
+}

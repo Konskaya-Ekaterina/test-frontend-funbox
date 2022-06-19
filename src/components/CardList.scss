@@ -1,0 +1,12 @@
+.card-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
+
+  @media screen and (max-width: 567px) {
+    flex-direction: column;
+  }
+}
